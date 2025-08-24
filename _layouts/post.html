@@ -27,6 +27,7 @@
   {% assign __is_blog = false %}
   {% if page.layout == 'post' %}{% assign __is_blog = true %}{% endif %}
   {% if page.url contains '/blog/' %}{% assign __is_blog = true %}{% endif %}
+  {% if page.math or page.mathjax %}{% include mathjax.html %}{% endif %}
   <div class="site-header">
     <div class="top-nav">
       {% if __is_blog %}

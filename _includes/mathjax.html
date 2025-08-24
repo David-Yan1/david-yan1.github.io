@@ -1,0 +1,16 @@
+<!-- _includes/mathjax.html -->
+<script>
+  window.MathJax = {
+    tex: {
+      // allow both $…$ / $$…$$ and \(…\) / \[…\]
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    },
+    options: {
+      // don't typeset inside code blocks, etc.
+      skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
