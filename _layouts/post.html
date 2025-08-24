@@ -1,3 +1,77 @@
----
-layout: default
----
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>{{ page.title }} | {{ site.name }}</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-234PYVSKQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-234PYVSKQ8');
+  </script>
+  <meta name="google-site-verification" content="1vbJNPeCYEZrXY6NfDNiTF4Z8xTLUTbp69jtWa4LNuU" />
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="author" content="{{ site.name }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  {% assign __is_blog = false %}
+  {% if page.layout == 'post' %}{% assign __is_blog = true %}{% endif %}
+  {% if page.url contains '/blog/' %}{% assign __is_blog = true %}{% endif %}
+  <div class="site-header">
+    <div class="top-nav">
+      {% if __is_blog %}
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="active">Home</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      {% endif %}
+    </div>
+  </div>
+  <div style="height:50px;"></div>
+
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        
+
+        <!-- Blog post header -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr style="padding:0px">
+            <td class="post-header" style="padding:2.5% 2.5% 0 2.5%;width:100%;vertical-align:left">
+              <h1>{{ page.title }}</h1>
+              <p style="color:#666;margin-bottom:-10px;">
+                <em>{{ page.date | date: "%B %d, %Y" }}</em>
+                {% if page.author %} • by {{ page.author }}{% endif %}
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:100%;vertical-align:left">
+              <div class="blog-content">
+                {{ content }}
+              </div>
+            </td>
+          </tr>
+        </table>
+
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

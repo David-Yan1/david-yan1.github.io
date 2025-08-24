@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>{{ page.title | default: site.name }} | {{ site.name }}</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-234PYVSKQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-234PYVSKQ8');
+  </script>
+  <meta name="google-site-verification" content="1vbJNPeCYEZrXY6NfDNiTF4Z8xTLUTbp69jtWa4LNuU" />
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="author" content="{{ site.name }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  {% assign __is_blog = false %}
+  {% if page.url contains '/blog/' %}{% assign __is_blog = true %}{% endif %}
+  <div class="site-header">
+    <div class="top-nav">
+      {% if __is_blog %}
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="active">Home</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      {% endif %}
+    </div>
+  </div>
+  <div style="height:50px;"></div>
+<table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin:0 auto;">
+    {% assign posts = site.posts | where: 'categories', 'blog' %}
+    {% for post in posts %}
+    <tr>
+      <td style="padding:20px 0;">
+        <div class="post-listing">
+          <div class="post-meta">
+            {{ post.date | date: "%-m/%-d/%y" }}
+          </div>
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </div>
+        </div>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+</body>
+
+</html>

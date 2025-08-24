@@ -29,15 +29,31 @@
 
 <body>
   
-
   <script>
     function showEmail() {
       document.getElementById('emailHolder').innerHTML = 'ude.notecnirp@divad.nay'.split("").reverse().join("")
     }
   </script>
 
+  {% assign __is_blog = false %}
+  {% if page.layout == 'post' %}{% assign __is_blog = true %}{% endif %}
+  {% if page.url contains '/blog/' %}{% assign __is_blog = true %}{% endif %}
+  <div class="site-header">
+    <div class="top-nav">
+      {% if __is_blog %}
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="active">Home</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div style="height:50px;"></div>
+
   <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
+    <tr>
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr style="padding:0px">
@@ -45,10 +61,10 @@
               <h1>
                 David Yan
               </h1>
-              <p>I am a third year undergraduate in Computer Science at Princeton University pursuing minors in applied mathematics and philosophy. I am currently a member of the <a href="https://pvl.cs.princeton.edu/"> Princeton Vision & Learning Lab </a> led by <a href="https://www.cs.princeton.edu/~jiadeng/"> Jia Deng </a>. 
-                I will be a visiting student at Stanford University in the summer of 2025, working with <a href="https://jiajunwu.com"> Jiajun Wu</a>.
+              <p>I am a fourth-year undergraduate in Computer Science at Princeton University pursuing minors in applied mathematics and philosophy. I am currently a member of the <a href="https://pvl.cs.princeton.edu/"> Princeton Vision & Learning Lab </a> led by <a href="https://www.cs.princeton.edu/~jiadeng/"> Jia Deng </a>. 
+                I was also a visiting student under <a href="https://jiajunwu.com"> Jiajun Wu</a> in the summer of 2025. I've also had the pleasure of working with some great student mentors: <a href="https://araistrick.github.io"> Alex Raistrick</a>,<a href="https://www.lahavlipson.com"> Lahav Lipson</a>, and <a href="https://cs.stanford.edu/~yzzhang/"> Yunzhi Zhang</a>.
               </p>
-              <p>Broadly, my research interests are in computer vision and perception. Recently, I have been interested in <em>understanding what makes good data</em> for downstream tasks and representation learning, especially for synthetic data.
+              <p>Broadly, my research interests are in computer vision. Recently, I have been interested in <em>understanding what makes good data</em> for downstream tasks and representation learning, especially for synthetic data.
                 In philosophy, I am interested in philosophy of mind and cognitive science.
               </p>
 
@@ -102,7 +118,7 @@
           {% if cat == 'research' %}
           <tr>
             <td style="padding:2.5%;width:35%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%" />
             </td> 
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
@@ -245,7 +261,7 @@
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Functional Programming </td>
                 </tr>
                 <tr>
-                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS417<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS417  </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Operating Systems </td>
                 </tr>
                 <tr>
@@ -257,7 +273,7 @@
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Computer Vision </td>
                 </tr>
                 <tr>
-                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS484<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS484  </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Natural Language Processing </td>
                 </tr>
                 <tr>
@@ -269,8 +285,12 @@
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Imaging the Invisible (Computational Imaging) </td>
                 </tr>
                 <tr>
-                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS529<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS529  </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Advanced Computer Vision </td>
+                </tr>
+                <tr>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> ECE531<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Robot Planning and Machine Learning</td>
                 </tr>
               </table>
             </td>
@@ -300,12 +320,21 @@
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Probability and Stochastic Systems </td>
                 </tr>
                 <tr>
-                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> APC350<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> APC350  </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Differential Equations </td>
                 </tr>
                 <tr>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> MAT321<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Numerical Analysis and Scientific Computing </td>
+                </tr>
+
+                <tr>
                   <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS445 </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Economics and Computing (Voting and Auction Theory) </td>
+                </tr>
+                <tr>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> ORF418<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Optimal Learning </td>
                 </tr>
                 <tr>
                   <td style="padding-left:2.5%;width:10%;vertical-align:middle"> COS511 </td>
@@ -344,8 +373,13 @@
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Consciousness and the Mind-Body Problem </td>
                 </tr>
                 <tr>
-                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> HIS361<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> HIS361  </td>
                   <td style="padding-left:2.5%;width:90%;vertical-align:middle"> U.S. Politics Since 1974 </td>
+                </tr>
+
+                <tr>
+                  <td style="padding-left:2.5%;width:10%;vertical-align:middle"> PHI371<sup>*</sup>  </td>
+                  <td style="padding-left:2.5%;width:90%;vertical-align:middle"> Probability and Decision Theory </td>
                 </tr>
 
               </table>
