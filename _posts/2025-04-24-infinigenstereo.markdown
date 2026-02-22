@@ -7,6 +7,6 @@ categories: research
 authors: "<b>David Yan</b>, Alexander Raistrick, Jia Deng"
 paper: https://arxiv.org/abs/2504.16930
 code: https://github.com/princeton-vl/InfinigenStereo
-venue: arXiv
+venue: CVPR 2026
 ---
 
