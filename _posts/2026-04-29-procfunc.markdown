@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "ProcFunc: Function-Oriented Abstractions for Procedural 3D Generation in Python"
+date:   2026-04-29 17:52:17 +00:00
+image: /images/livingrooms_mixed_with_normals2.png
+categories: research
+authors: "Alexander Raistrick, Karhan Kayan, Jack Nugent, <b>David Yan</b>, Lingjie Mei, Meenal Parakh, Hongyu Wen, Dylan Li, Yiming Zuo, Erich Liang, Jia Deng"
+paper: https://arxiv.org/abs/2604.26943
+code: https://github.com/princeton-vl/procfunc
+venue: arXiv
+---
