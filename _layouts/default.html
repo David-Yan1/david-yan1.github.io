@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>{{ site.name }}</title>
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
 
         <!-- Google tag (gtag.js) -->
         <script
@@ -51,17 +51,25 @@
             }
         </script>
 
-        {% assign __is_blog = false %} {% if page.layout == 'post' %}{% assign
-        __is_blog = true %}{% endif %} {% if page.url contains '/blog/' %}{%
-        assign __is_blog = true %}{% endif %}
+        {% assign __is_blog = false %}
+        {% if page.layout == 'post' %}{% assign __is_blog = true %}{% endif %}
+        {% if page.url contains '/blog/' %}{% assign __is_blog = true %}{% endif %}
+        {% assign __is_misc = false %}
+        {% if page.url contains '/misc/' %}{% assign __is_misc = true %}{% endif %}
         <div class="site-header">
             <div class="top-nav">
                 {% if __is_blog %}
                 <a href="{{ '/' | relative_url }}">Home</a>
                 <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
+                <a href="{{ '/misc/' | relative_url }}">Misc</a>
+                {% elsif __is_misc %}
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/blog/' | relative_url }}">Blog</a>
+                <a href="{{ '/misc/' | relative_url }}" class="active">Misc</a>
                 {% else %}
                 <a href="{{ '/' | relative_url }}" class="active">Home</a>
                 <a href="{{ '/blog/' | relative_url }}">Blog</a>
+                <a href="{{ '/misc/' | relative_url }}">Misc</a>
                 {% endif %}
             </div>
         </div>
@@ -81,6 +89,7 @@
         >
             <tr>
                 <td style="padding: 0px">
+                    {% unless __is_misc %}
                     <table
                         style="
                             width: 100%;
@@ -101,20 +110,19 @@
                             >
                                 <h1>David Yan</h1>
                                 <p>
-                                    I am an incoming PhD student and final-year
-                                    undergraduate in Computer Science at
+                                    I am an incoming PhD student in Computer Science at
                                     Princeton University, advised by
                                     <a
                                         href="https://www.cs.princeton.edu/~jiadeng/"
                                     >
                                         Jia Deng</a
-                                    >. My research is graciously supported by
+                                    >, where my research is graciously supported by
                                     the
                                     <a
                                         href="https://gradschool.princeton.edu/financial-support/fellowships/princeton-fellowships/francis-robbins-upton-fellowship"
                                     >
                                         Francis Robbins Upton Fellowship</a
-                                    >.
+                                    >. Previously, I received my B.S.E. in Computer Science from Princeton.
                                 </p>
                                 <p>
                                     Recently, I have been interested in
@@ -204,7 +212,25 @@
                             margin-right: auto;
                             margin-left: auto;
                         "
-                    >
+                    >   
+                        <tr>
+                            <td
+                                style="
+                                    padding: 0% 2.5% 0% 2.5%;
+                                    width: 100%;
+                                    vertical-align: middle;
+                                "
+                            >
+                                <p style="margin-bottom: 0.2em">
+                                    → I'll be a research intern at
+                                    <a
+                                        href="https://elorian.ai/"
+                                        >Elorian</a
+                                    > this summer!
+                                </p>
+                            </td>
+                        </tr>
+                        
                         <tr>
                             <td
                                 style="
@@ -353,7 +379,7 @@
                                     vertical-align: middle;
                                 "
                             >
-                                <h2>Some Fun Projects!</h2>
+                                <h2>Some fun projects!</h2>
                             </td>
                         </tr>
                     </table>
@@ -426,72 +452,8 @@
                     <br />
                     <br />
                     <br />
-
-                    <!-- COURSEWORK POSTS-->
-                    <!--  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Coursework</h2>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'coursework' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.course}}</em>
-              <br>
-	      {{post.authors}}
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table> -->
-
+                    {% endunless %}
+                    {% if __is_misc %}
                     <table
                         style="
                             width: 100%;
@@ -510,7 +472,7 @@
                                     vertical-align: middle;
                                 "
                             >
-                                <h2>Coursework</h2>
+                                <h2>Selected Coursework</h2>
                             </td>
                         </tr>
                         <tr>
@@ -806,7 +768,7 @@
                                                 vertical-align: middle;
                                             "
                                         >
-                                            COS435<sup>*</sup>
+                                            COS435
                                         </td>
                                         <td
                                             style="
@@ -1017,7 +979,7 @@
                                                 vertical-align: middle;
                                             "
                                         >
-                                            MAT399<sup>*</sup>
+                                            MAT399
                                         </td>
                                         <td
                                             style="
@@ -1226,7 +1188,7 @@
                                                 vertical-align: middle;
                                             "
                                         >
-                                            PHI334<sup>*</sup>
+                                            PHI334
                                         </td>
                                         <td
                                             style="
@@ -1246,7 +1208,7 @@
                                                 vertical-align: middle;
                                             "
                                         >
-                                            HIS283<sup>*</sup>
+                                            HIS283
                                         </td>
                                         <td
                                             style="
@@ -1262,18 +1224,7 @@
                             </td>
                         </tr>
                     </table>
-                    <br />
-                    <tr>
-                        <td
-                            style="
-                                padding-left: 2.5%;
-                                width: 10%;
-                                vertical-align: middle;
-                            "
-                        >
-                            * denotes ongoing course
-                        </td>
-                    </tr>
+                    {% endif %}
                 </td>
             </tr>
         </table>
