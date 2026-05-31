@@ -114,9 +114,10 @@ body {
 
 
 .top-nav { 
-  max-width: 1000px; 
+  width: 95%;
+  max-width: 807.5px; 
   margin: 0 auto; 
-  padding: 0 2.5%; 
+  padding: 0; 
   height: 50px; 
   display: flex; 
   align-items: center; 
@@ -131,7 +132,8 @@ body {
   text-decoration: none;
 }
 .top-nav a.active {
-  text-decoration: underline !important;
+  font-weight: 700;
+  text-decoration: none !important;
 }
 .site-header {
   position: relative;
@@ -146,7 +148,7 @@ body {
 }
 
 .post-listing {
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 0 2.5%;
 }

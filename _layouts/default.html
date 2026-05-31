@@ -59,17 +59,17 @@
         <div class="site-header">
             <div class="top-nav">
                 {% if __is_blog %}
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
-                <a href="{{ '/misc/' | relative_url }}">Misc</a>
+                <a href="{{ '/' | relative_url }}">about</a>
+                <a href="{{ '/blog/' | relative_url }}" class="active">blog</a>
+                <a href="{{ '/misc/' | relative_url }}">misc</a>
                 {% elsif __is_misc %}
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/blog/' | relative_url }}">Blog</a>
-                <a href="{{ '/misc/' | relative_url }}" class="active">Misc</a>
+                <a href="{{ '/' | relative_url }}">about</a>
+                <a href="{{ '/blog/' | relative_url }}">blog</a>
+                <a href="{{ '/misc/' | relative_url }}" class="active">misc</a>
                 {% else %}
-                <a href="{{ '/' | relative_url }}" class="active">Home</a>
-                <a href="{{ '/blog/' | relative_url }}">Blog</a>
-                <a href="{{ '/misc/' | relative_url }}">Misc</a>
+                <a href="{{ '/' | relative_url }}" class="active">about</a>
+                <a href="{{ '/blog/' | relative_url }}">blog</a>
+                <a href="{{ '/misc/' | relative_url }}">misc</a>
                 {% endif %}
             </div>
         </div>
@@ -79,7 +79,7 @@
         <table
             style="
                 width: 100%;
-                max-width: 1000px;
+                max-width: 850px;
                 border: 0px;
                 border-spacing: 0px;
                 border-collapse: separate;
@@ -96,6 +96,7 @@
                             border: 0px;
                             border-spacing: 0px;
                             border-collapse: separate;
+                            table-layout: fixed;
                             margin-right: auto;
                             margin-left: auto;
                         "
@@ -104,14 +105,14 @@
                             <td
                                 style="
                                     padding: 2.5%;
-                                    width: 60%;
+                                    width: 36%;
                                     vertical-align: left;
                                 "
                             >
                                 <h1>David Yan</h1>
                                 <p>
-                                    I am an incoming PhD student in Computer Science at
-                                    Princeton University, advised by
+                                    I am an incoming CS PhD student at
+                                    Princeton, advised by
                                     <a
                                         href="https://www.cs.princeton.edu/~jiadeng/"
                                     >
@@ -122,7 +123,7 @@
                                         href="https://gradschool.princeton.edu/financial-support/fellowships/princeton-fellowships/francis-robbins-upton-fellowship"
                                     >
                                         Francis Robbins Upton Fellowship</a
-                                    >. Previously, I received my B.S.E. in Computer Science from Princeton.
+                                    >. I received my B.S.E. from Princeton, where I studied computer science, math, and philosophy. 
                                 </p>
                                 <p>
                                     Recently, I have been interested in
@@ -162,20 +163,21 @@
                             <td
                                 style="
                                     padding: 2.5%;
-                                    width: 40%;
-                                    max-width: 40%;
+                                    width: 19%;
+                                    max-width: 19%;
                                 "
                             >
                                 <img
-                                    style="width: 100%; max-width: 100%"
+                                    style="
+                                        width: 100%;
+                                        max-width: 100%;
+                                        aspect-ratio: 1 / 1;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                    "
                                     alt="profile photo"
-                                    src="images/profile_circle.png"
+                                    src="images/profile_square.jpg"
                                 />
-                                <p style="text-align: center">
-                                    <a href="images/profile_square.jpg"
-                                        >Download Profile Picture (Square)</a
-                                    >
-                                </p>
                             </td>
                         </tr>
                     </table>
@@ -199,7 +201,7 @@
                                     vertical-align: middle;
                                 "
                             >
-                                <h2>News!</h2>
+                                <h2>News</h2>
                             </td>
                         </tr>
                     </table>
@@ -212,57 +214,82 @@
                             margin-right: auto;
                             margin-left: auto;
                         "
-                    >   
+                    >
                         <tr>
                             <td
                                 style="
-                                    padding: 0% 2.5% 0% 2.5%;
-                                    width: 100%;
-                                    vertical-align: middle;
+                                    padding: 0% 1.5% 0.35% 2.5%;
+                                    width: 12%;
+                                    vertical-align: top;
+                                    color: #666;
+                                    white-space: nowrap;
                                 "
                             >
-                                <p style="margin-bottom: 0.2em">
-                                    → I'll be a research intern at
+                                05/2026
+                            </td>
+                            <td
+                                style="
+                                    padding: 0% 2.5% 0.35% 0%;
+                                    width: 88%;
+                                    vertical-align: top;
+                                "
+                            >
+                                I'll be a research intern at
                                     <a
                                         href="https://elorian.ai/"
                                         >Elorian</a
                                     > this summer!
-                                </p>
                             </td>
                         </tr>
-                        
                         <tr>
                             <td
                                 style="
-                                    padding: 0% 2.5% 0% 2.5%;
-                                    width: 100%;
-                                    vertical-align: middle;
+                                    padding: 0% 1.5% 0.35% 2.5%;
+                                    width: 12%;
+                                    vertical-align: top;
+                                    color: #666;
+                                    white-space: nowrap;
                                 "
                             >
-                                <p style="margin-bottom: 0.2em">
-                                    → I received an Honorable Mention for the
+                                12/2025
+                            </td>
+                            <td
+                                style="
+                                    padding: 0% 2.5% 0.35% 0%;
+                                    width: 88%;
+                                    vertical-align: top;
+                                "
+                            >
+                                I received an Honorable Mention for the
                                     <a
                                         href="https://cra.org/about/awards/outstanding-undergraduate-researcher-award/"
                                         >CRA Outstanding Undergraduate
                                         Researcher Award</a
                                     >!
-                                </p>
                             </td>
                         </tr>
                         <tr>
                             <td
                                 style="
-                                    padding: 0% 2.5% 0% 2.5%;
-                                    width: 100%;
-                                    vertical-align: middle;
+                                    padding: 0% 1.5% 0.35% 2.5%;
+                                    width: 12%;
+                                    vertical-align: top;
+                                    color: #666;
+                                    white-space: nowrap;
                                 "
                             >
-                                <p style="margin-bottom: 0.2em">
-                                    →
-                                    <a href="pdfs/stereo_ppt.pdf">Slides </a>
+                                05/2025
+                            </td>
+                            <td
+                                style="
+                                    padding: 0% 2.5% 0.35% 0%;
+                                    width: 88%;
+                                    vertical-align: top;
+                                "
+                            >
+                                <a href="pdfs/stereo_ppt.pdf">Slides </a>
                                     for my recent work on understanding
                                     procedural data generation for stereo depth.
-                                </p>
                             </td>
                         </tr>
                     </table>
@@ -379,7 +406,7 @@
                                     vertical-align: middle;
                                 "
                             >
-                                <h2>Some fun projects!</h2>
+                                <h2>Projects</h2>
                             </td>
                         </tr>
                     </table>

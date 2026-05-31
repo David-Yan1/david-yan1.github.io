@@ -33,23 +33,23 @@
   <div class="site-header">
     <div class="top-nav">
       {% if __is_blog %}
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
-        <a href="{{ '/misc/' | relative_url }}">Misc</a>
+        <a href="{{ '/' | relative_url }}">about</a>
+        <a href="{{ '/blog/' | relative_url }}" class="active">blog</a>
+        <a href="{{ '/misc/' | relative_url }}">misc</a>
       {% elsif __is_misc %}
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a href="{{ '/misc/' | relative_url }}" class="active">Misc</a>
+        <a href="{{ '/' | relative_url }}">about</a>
+        <a href="{{ '/blog/' | relative_url }}">blog</a>
+        <a href="{{ '/misc/' | relative_url }}" class="active">misc</a>
       {% else %}
-        <a href="{{ '/' | relative_url }}" class="active">Home</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a href="{{ '/misc/' | relative_url }}">Misc</a>
+        <a href="{{ '/' | relative_url }}" class="active">about</a>
+        <a href="{{ '/blog/' | relative_url }}">blog</a>
+        <a href="{{ '/misc/' | relative_url }}">misc</a>
       {% endif %}
     </div>
   </div>
   <div style="height:50px;"></div>
 
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tr style="padding:0px">
       <td style="padding:0px">
         
