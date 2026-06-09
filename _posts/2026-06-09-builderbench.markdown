@@ -6,5 +6,5 @@ image: /images/overall_success_plot.png
 categories: research
 authors: "<b>David Yan</b>, Brandon Cho, Andrew Tu, Vedant Badoni, Zechang Yang, Raj Ghugare, Benjamin Eysenbach"
 paper: /pdfs/builderbench.pdf
-venue: project / pre-print
+venue: project / preprint
 ---
