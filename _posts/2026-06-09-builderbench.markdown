@@ -6,5 +6,5 @@ image: /images/overall_success_plot.png
 categories: research
 authors: "<b>David Yan</b>, Brandon Cho, Andrew Tu, Vedant Badoni, Zechang Yang, Raj Ghugare, Benjamin Eysenbach"
 paper: /pdfs/builderbench.pdf
-venue: project / preprint
+venue: RLC 2026 Workshop on Reinforcement Learning Beyond Rewards
 ---
