@@ -1,0 +1,11 @@
+{% assign __section = 'about' %}
+{% if page.layout == 'post' or page.url contains '/blog/' %}{% assign __section = 'blog' %}{% endif %}
+{% if page.url contains '/misc/' %}{% assign __section = 'misc' %}{% endif %}
+<header class="site-header">
+  <a href="{{ '/' | relative_url }}" class="masthead">David Yan</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="{{ '/' | relative_url }}"{% if __section == 'about' %} aria-current="page"{% endif %}>about</a>
+    <a href="{{ '/blog/' | relative_url }}"{% if __section == 'blog' %} aria-current="page"{% endif %}>blog</a>
+    <a href="{{ '/misc/' | relative_url }}"{% if __section == 'misc' %} aria-current="page"{% endif %}>misc</a>
+  </nav>
+</header>
